@@ -5,8 +5,16 @@ metadata:
   namespace: application
 spec:
   rules:
-  - host: app.coplandpost.com/job
+  - host: app.coplandpost.com
     http:
+      paths:
+      - path: /job/api
+        pathType: Prefix
+        backend:
+          service:
+            name: job-clusterip-svc
+            port: 
+              number: 5091
       paths:
       - path: /api-docs
         pathType: Prefix

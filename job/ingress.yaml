@@ -8,7 +8,7 @@ spec:
   - host: app.coplandpost.com
     http:
       paths:
-      - path: /job/api-docs
+      - path: /api-docs
         pathType: Prefix
         backend:
           service:

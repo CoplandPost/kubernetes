@@ -5,7 +5,7 @@ metadata:
   namespace: application
 spec:
   rules:
-  - host: app.coplandpost.com
+  - host: app.coplandpost.com/job
     http:
       paths:
       - path: /api-docs

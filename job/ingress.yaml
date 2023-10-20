@@ -15,7 +15,6 @@ spec:
             name: job-clusterip-svc
             port: 
               number: 5091
-      paths:
       - path: /api-docs
         pathType: Prefix
         backend:

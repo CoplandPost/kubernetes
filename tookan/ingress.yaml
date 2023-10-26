@@ -14,7 +14,7 @@ spec:
           service:
             name: tookan-clusterip-svc
             port: 
-              number: 5091
+              number: 5089
       - path: /api-docs
         pathType: Prefix
         backend:

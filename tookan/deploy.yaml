@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tookan-deployment
+  labels:
+    app: tookan
+  namespace: application
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tookan
+  template:
+    metadata:
+      labels:
+        app: tookan
+    spec:
+      containers:
+      - name: tookan
+        image: 15012013/tookan:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 200m
+            memory: 455Mi
+          limits:
+            cpu: 200m
+            memory: 1Gi
+        ports:
+          - containerPort: 5089
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tookan-clusterip-svc
+  namespace: application
+spec:
+  selector:
+    app: tookan
+  ports:
+    - name: job
+      protocol: TCP
+      port: 5089
+      targetPort: 5089

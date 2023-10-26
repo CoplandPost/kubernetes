@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-svc
+  namespace: application
+spec:
+  rules:
+  - host: app.coplandpost.com
+    http:
+      paths:
+      - path: /api/job
+        pathType: Prefix
+        backend:
+          service:
+            name: job-clusterip-svc
+            port: 
+              number: 5091
+      - path: /api-docs
+        pathType: Prefix
+        backend:
+          service:
+            name: job-clusterip-svc
+            port: 
+              number: 5091
+  ingressClassName: nginx

@@ -8,18 +8,18 @@ spec:
   - host: app.coplandpost.com
     http:
       paths:
-      - path: /api/job
+      - path: /api/tookan
         pathType: Prefix
         backend:
           service:
-            name: job-clusterip-svc
+            name: tookan-clusterip-svc
             port: 
               number: 5091
       - path: /api-docs
         pathType: Prefix
         backend:
           service:
-            name: job-clusterip-svc
+            name: tookan-clusterip-svc
             port: 
-              number: 5091
+              number: 5089
   ingressClassName: nginx

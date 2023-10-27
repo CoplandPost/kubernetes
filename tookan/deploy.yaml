@@ -4,9 +4,8 @@ metadata:
   name: tookan-deployment
   labels:
     app: tookan
-  namespace: application
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: tookan

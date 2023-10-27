@@ -21,10 +21,10 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            cpu: 2
+            cpu: 500m
             memory: 200Mi
           limits:
-            cpu: 2
+            cpu: 1.5
             memory: 512Mi
         ports:
           - containerPort: 5089
@@ -36,6 +36,12 @@ spec:
           periodSeconds: 3
           failureThreshold: 2
 ---
+
+kubectl get pod tookan-deployment-d5794548-kvmxs --output=yaml -n application
+
+
+kubectl get pod tookan-deployment-d5794548-kvmxs -o go-template='{{range .status.containerStatuses}}{{printf "%s:\n%s\n\n" .name .lastState.terminated.message}}{{end}}'
+
 apiVersion: v1
 kind: Service
 metadata:

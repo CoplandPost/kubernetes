@@ -482,10 +482,10 @@ spec:
           timeoutSeconds: 1
         resources:
           limits:
-            cpu: 500
+            cpu: 1
             memory: 1Gi
           requests:
-            cpu: 1
+            cpu: 500
             memory: 512M
         securityContext:
           allowPrivilegeEscalation: true

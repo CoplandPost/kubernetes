@@ -485,7 +485,7 @@ spec:
             cpu: 1
             memory: 1Gi
           requests:
-            cpu: 500
+            cpu: 0.5
             memory: 512M
         securityContext:
           allowPrivilegeEscalation: true

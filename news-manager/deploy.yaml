@@ -27,7 +27,7 @@ spec:
             cpu: 1
             memory: 512M
         ports:
-          - containerPort: 5089
+          - containerPort: 5092
         # livenessProbe:
         #   httpGet:
         #     path: /api/health-check
@@ -47,5 +47,5 @@ spec:
   ports:
     - name: news-manager
       protocol: TCP
-      port: 5091
-      targetPort: 5091
+      port: 5092
+      targetPort: 5092

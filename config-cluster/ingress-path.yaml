@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-svc
+  namespace: application
+spec:
+  rules:
+  - host: app.coplandpost.com
+    http:
+      paths:
+      - path: /api/tookan
+        pathType: Prefix
+        backend:
+          service:
+            name: tookan-clusterip-svc
+            port: 
+              number: 5089
+      - path: /api/new
+        pathType: Prefix
+        backend:
+          service:
+            name: news-manager-clusterip-svc
+            port: 
+              number: 5091
+      - path: /api-docs
+        pathType: Prefix
+        backend:
+          service:
+            name: news-manager-clusterip-svc
+            port: 
+              number: 5091
+  ingressClassName: nginx

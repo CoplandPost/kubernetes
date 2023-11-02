@@ -1,4 +1,3 @@
-kubectl apply -f - <<EOF
 apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
@@ -69,4 +68,3 @@ spec:
       deleteClaim: false
       size: 10Gi
       type: persistent-claim
-EOF

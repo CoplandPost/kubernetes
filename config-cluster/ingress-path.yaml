@@ -21,12 +21,12 @@ spec:
           service:
             name: news-manager-clusterip-svc
             port: 
-              number: 5091
+              number: 5092
       - path: /api-docs
         pathType: Prefix
         backend:
           service:
             name: news-manager-clusterip-svc
             port: 
-              number: 5091
+              number: 5092
   ingressClassName: nginx

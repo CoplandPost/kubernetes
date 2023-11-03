@@ -5,7 +5,7 @@ metadata:
   namespace: application
 spec:
   rules:
-  - host: app.coplandpost.com
+  - host: *
     http:
       paths:
       - path: /api/tookan

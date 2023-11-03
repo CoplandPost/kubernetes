@@ -15,10 +15,14 @@ spec:
             name: tookan-clusterip-svc
             port: 
               number: 5089
-      - path: [
-          /api/new/markread,
-          /api/new/load/byuser
-        ]
+      - path: /api/new/load/byuser
+        pathType: Prefix
+        backend:
+          service:
+            name: news-manager-clusterip-svc
+            port: 
+              number: 5092
+      - path: /api/new/markread
         pathType: Prefix
         backend:
           service:

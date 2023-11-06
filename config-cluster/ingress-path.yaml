@@ -22,11 +22,18 @@ spec:
             name: news-manager-clusterip-svc
             port: 
               number: 5092
+      - path: /api/campaign
+        pathType: Prefix
+        backend:
+          service:
+            name: campaign-manager-clusterip-svc
+            port: 
+              number: 5080
       - path: /api-docs
         pathType: Prefix
         backend:
           service:
-            name: news-manager-clusterip-svc
+            name: campaign-manager-clusterip-svc
             port: 
-              number: 5092
+              number: 5080
   ingressClassName: nginx

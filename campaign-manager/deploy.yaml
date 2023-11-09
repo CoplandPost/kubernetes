@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: campaign-manager
-        image: 342835242709.dkr.ecr.us-east-1.amazonaws.com/campaign-manager
+        image: 15012013/campaign-manager:latest
         imagePullPolicy: Always
         resources:
           requests:
@@ -35,8 +35,6 @@ spec:
           # initialDelaySeconds: 3
           # periodSeconds: 3
           # failureThreshold: 2
-      imagePullSecrets:
-        - name: regcred
 ---
 apiVersion: v1
 kind: Service

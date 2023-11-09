@@ -20,7 +20,7 @@ spec:
         image: 342835242709.dkr.ecr.us-east-1.amazonaws.com/campaign-manager
         imagePullPolicy: Always
         imagePullSecrets:
-        - name: regcred
+          - name: regcred
         resources:
           requests:
             cpu: 200m

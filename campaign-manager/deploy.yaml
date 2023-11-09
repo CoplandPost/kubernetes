@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       imagePullSecrets:
-      - name: regcred
+        - name: regcred
       - name: campaign-manager
         image: 342835242709.dkr.ecr.us-east-1.amazonaws.com/campaign-manager
         imagePullPolicy: Always

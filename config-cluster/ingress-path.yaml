@@ -36,6 +36,13 @@ spec:
             name: customer-manager-clusterip-svc
             port: 
               number: 5076
+      - path: /api/email
+        pathType: Prefix
+        backend:
+          service:
+            name: email-service-clusterip-svc
+            port: 
+              number: 5058
       - path: /api-docs
         pathType: Prefix
         backend:

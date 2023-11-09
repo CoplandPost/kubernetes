@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: campaign-manager
-        image: 15012013/campaign-manager:latest
+        image: 342835242709.dkr.ecr.us-east-1.amazonaws.com/campaign-manager
         imagePullPolicy: Never
         resources:
           requests:

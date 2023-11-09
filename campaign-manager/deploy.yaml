@@ -18,7 +18,7 @@ spec:
       containers:
       - name: campaign-manager
         image: 15012013/campaign-manager:latest
-        imagePullPolicy: Always
+        imagePullPolicy: Never
         resources:
           requests:
             cpu: 200m

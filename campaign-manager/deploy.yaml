@@ -16,8 +16,6 @@ spec:
         app: campaign-manager
     spec:
       containers:
-      imagePullSecrets:
-        - name: regcred
       - name: campaign-manager
         image: 342835242709.dkr.ecr.us-east-1.amazonaws.com/campaign-manager
         imagePullPolicy: Always
@@ -37,6 +35,8 @@ spec:
           # initialDelaySeconds: 3
           # periodSeconds: 3
           # failureThreshold: 2
+      imagePullSecrets:
+        - name: regcred
 ---
 apiVersion: v1
 kind: Service

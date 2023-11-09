@@ -18,7 +18,7 @@ spec:
       containers:
       - name: campaign-manager
         image: 342835242709.dkr.ecr.us-east-1.amazonaws.com/campaign-manager
-        imagePullPolicy: Never
+        imagePullPolicy: Always
         resources:
           requests:
             cpu: 200m

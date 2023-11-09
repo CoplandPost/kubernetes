@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contact-manager-deployment
+  labels:
+    app: contact-manager
+  namespace: application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: contact-manager
+  template:
+    metadata:
+      labels:
+        app: contact-manager
+    spec:
+      containers:
+      - name: contact-manager
+        image: 15012013/contact-manager:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 200m
+            memory: 200M
+          limits:
+            cpu: 500m
+            memory: 512M
+        ports:
+          - containerPort: 5075
+        # livenessProbe:
+        #   httpGet:
+        #     path: /api/health-check
+        #     port: 5089
+          # initialDelaySeconds: 3
+          # periodSeconds: 3
+          # failureThreshold: 2
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: contact-manager-clusterip-svc
+  namespace: application
+spec:
+  selector:
+    app: contact-manager
+  ports:
+    - name: contact-manager
+      protocol: TCP
+      port: 5075  
+      targetPort: 5075

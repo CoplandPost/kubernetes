@@ -19,8 +19,6 @@ spec:
       - name: customer-manager
         image: 15012013/customer-manager:latest
         imagePullPolicy: Always
-        imagePullSecrets:
-        - name: regcred
         resources:
           requests:
             cpu: 200m

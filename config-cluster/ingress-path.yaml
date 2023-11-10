@@ -106,6 +106,13 @@ spec:
             name: file-storage-service-clusterip-svc
             port: 
               number: 5057
+      - path: /api/document
+        pathType: Prefix
+        backend:
+          service:
+            name: document-manager-clusterip-svc
+            port: 
+              number: 5071
       - path: /api-docs
         pathType: Prefix
         backend:

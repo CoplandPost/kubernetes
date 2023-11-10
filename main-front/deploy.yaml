@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: main-front-deployment
+  labels:
+    app: main-front
+  namespace: application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: main-front
+  template:
+    metadata:
+      labels:
+        app: main-front
+    spec:
+      containers:
+      - name: main-front
+        image: 15012013/main_front:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 200m
+            memory: 200M
+          limits:
+            cpu: 200m
+            memory: 512M
+        ports:
+          - containerPort: 80
+        # livenessProbe:
+        #   httpGet:
+        #     path: /api/health-check
+        #     port: 5089
+          # initialDelaySeconds: 3
+          # periodSeconds: 3
+          # failureThreshold: 2
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: main-front-clusterip-svc
+  namespace: application
+spec:
+  selector:
+    app: main-front
+  ports:
+    - name: task-manager
+      protocol: TCP
+      port: 80
+      targetPort: 80

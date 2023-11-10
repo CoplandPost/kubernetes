@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: people-manager-deployment
+  labels:
+    app: people-manager
+  namespace: application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: people-manager
+  template:
+    metadata:
+      labels:
+        app: people-manager
+    spec:
+      containers:
+      - name: people-manager
+        image: 15012013/people-manager:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 200m
+            memory: 200M
+          limits:
+            cpu: 500m
+            memory: 512M
+        ports:
+          - containerPort: 5055
+        # livenessProbe:
+        #   httpGet:
+        #     path: /api/health-check
+        #     port: 5089
+          # initialDelaySeconds: 3
+          # periodSeconds: 3
+          # failureThreshold: 2
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: people-manager-clusterip-svc
+  namespace: application
+spec:
+  selector:
+    app: people-manager
+  ports:
+    - name: people-manager
+      protocol: TCP
+      port: 5055    
+      targetPort: 5055

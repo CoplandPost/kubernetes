@@ -43,7 +43,21 @@ spec:
             name: email-service-clusterip-svc
             port: 
               number: 5058
-      - path: /api/slack
+      - path: /api/email
+        pathType: Prefix
+        backend:
+          service:
+            name: people-manager-clusterip-svc
+            port: 
+              number: 5055
+      - path: /api/deliver
+        pathType: Prefix
+        backend:
+          service:
+            name: people-manager-clusterip-svc
+            port: 
+              number: 5055
+      - path: /api/account
         pathType: Prefix
         backend:
           service:

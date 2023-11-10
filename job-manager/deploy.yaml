@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: job-deployment
+  name: job-manager-deployment
   labels:
-    app: job
+    app: job-manager
   namespace: application
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: job
+      app: job-manager
   template:
     metadata:
       labels:
-        app: job
+        app: job-manager
     spec:
       containers:
-      - name: job
-        image: 15012013/job:latest
+      - name: job-manager
+        image: 15012013/job-manager:latest
         imagePullPolicy: Always
         resources:
           requests:
@@ -32,13 +32,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: job-clusterip-svc
+  name: job-manager-clusterip-svc
   namespace: application
 spec:
   selector:
-    app: job
+    app: job-manager
   ports:
-    - name: job
+    - name: job-manager
       protocol: TCP
       port: 5091
       targetPort: 5091

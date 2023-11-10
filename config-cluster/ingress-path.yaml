@@ -120,6 +120,13 @@ spec:
             name: task-manager-clusterip-svc
             port: 
               number: 5078
+      - path: /api/job
+        pathType: Prefix
+        backend:
+          service:
+            name: job-manager-clusterip-svc
+            port: 
+              number: 5091
       - path: /api-docs
         pathType: Prefix
         backend:

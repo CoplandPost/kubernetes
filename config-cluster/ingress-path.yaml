@@ -64,6 +64,27 @@ spec:
             name: slack-service-clusterip-svc
             port: 
               number: 5074
+      - path: /api/hash
+        pathType: Prefix
+        backend:
+          service:
+            name: authentication-service-clusterip-svc
+            port: 
+              number: 5056
+      - path: /api/login
+        pathType: Prefix
+        backend:
+          service:
+            name: authentication-service-clusterip-svc
+            port: 
+              number: 5056
+      - path: /api/token
+        pathType: Prefix
+        backend:
+          service:
+            name: authentication-service-clusterip-svc
+            port: 
+              number: 5056
       - path: /api/contact
         pathType: Prefix
         backend:

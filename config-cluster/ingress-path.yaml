@@ -98,7 +98,7 @@ spec:
           service:
             name: file-storage-service-clusterip-svc
             port: 
-              number: 5075
+              number: 5057
       - path: /api/upload
         pathType: Prefix
         backend:

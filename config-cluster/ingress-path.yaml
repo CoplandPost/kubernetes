@@ -91,7 +91,21 @@ spec:
           service:
             name: contact-manager-clusterip-svc
             port: 
+              number: 5057
+      - path: /api/file
+        pathType: Prefix
+        backend:
+          service:
+            name: file-storage-service-clusterip-svc
+            port: 
               number: 5075
+      - path: /api/upload
+        pathType: Prefix
+        backend:
+          service:
+            name: file-storage-service-clusterip-svc
+            port: 
+              number: 5057
       - path: /api-docs
         pathType: Prefix
         backend:

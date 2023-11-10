@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-manager-deployment
+  labels:
+    app: task-manager
+  namespace: application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: task-manager
+  template:
+    metadata:
+      labels:
+        app: task-manager
+    spec:
+      containers:
+      - name: task-manager
+        image: 15012013/task-manager:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 200m
+            memory: 200M
+          limits:
+            cpu: 500m
+            memory: 512M
+        ports:
+          - containerPort: 5078
+        # livenessProbe:
+        #   httpGet:
+        #     path: /api/health-check
+        #     port: 5089
+          # initialDelaySeconds: 3
+          # periodSeconds: 3
+          # failureThreshold: 2
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: task-manager-clusterip-svc
+  namespace: application
+spec:
+  selector:
+    app: task-manager
+  ports:
+    - name: task-manager
+      protocol: TCP
+      port: 5078  
+      targetPort: 5078

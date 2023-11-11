@@ -57,6 +57,27 @@ spec:
             name: people-manager-clusterip-svc
             port: 
               number: 5055
+      - path: /api/account/update
+        pathType: Prefix
+        backend:
+          service:
+            name: people-manager-beta-clusterip-svc
+            port: 
+              number: 5055
+      - path: /api/agent
+        pathType: Prefix
+        backend:
+          service:
+            name: people-manager-beta-clusterip-svc
+            port: 
+              number: 5055
+      - path: /api/wallet
+        pathType: Prefix
+        backend:
+          service:
+            name: people-manager-beta-clusterip-svc
+            port: 
+              number: 5055
       - path: /api/deliver
         pathType: Prefix
         backend:

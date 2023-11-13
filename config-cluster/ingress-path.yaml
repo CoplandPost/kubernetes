@@ -168,5 +168,5 @@ spec:
           service:
             name: people-manager-beta-clusterip-svc
             port: 
-              number: 5055
+              number: 5077
   ingressClassName: nginx

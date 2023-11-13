@@ -155,6 +155,13 @@ spec:
             name: job-manager-clusterip-svc
             port: 
               number: 5091
+      - path: /api/services
+        pathType: Prefix
+        backend:
+          service:
+            name: services-manager-clusterip-svc
+            port: 
+              number: 5077
       - path: /api-docs
         pathType: Prefix
         backend:

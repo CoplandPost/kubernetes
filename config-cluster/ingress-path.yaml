@@ -161,5 +161,5 @@ spec:
           service:
             name: job-manager-clusterip-svc
             port: 
-              number: 5091
+              number: 5055
   ingressClassName: nginx

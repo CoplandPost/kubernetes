@@ -162,11 +162,18 @@ spec:
             name: services-manager-clusterip-svc
             port: 
               number: 5077
+      - path: /api/quote
+        pathType: Prefix
+        backend:
+          service:
+            name: quote-manager-clusterip-svc
+            port: 
+              number: 5085
       - path: /api-docs
         pathType: Prefix
         backend:
           service:
-            name: people-manager-beta-clusterip-svc
+            name: quote-manager-beta-clusterip-svc
             port: 
-              number: 5077
+              number: 5085
   ingressClassName: nginx

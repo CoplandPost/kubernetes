@@ -57,6 +57,13 @@ spec:
             name: people-manager-clusterip-svc
             port: 
               number: 5055
+      - path: /api/signup
+        pathType: Prefix
+        backend:
+          service:
+            name: people-manager-clusterip-svc
+            port: 
+              number: 5055
       - path: /api/account/update
         pathType: Prefix
         backend:

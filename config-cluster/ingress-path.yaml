@@ -119,7 +119,7 @@ spec:
           service:
             name: contact-manager-clusterip-svc
             port: 
-              number: 5057
+              number: 5075
       - path: /api/file
         pathType: Prefix
         backend:

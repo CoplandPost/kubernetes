@@ -180,7 +180,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: people-manager-beta-clusterip-svc
+            name: task-manager-clusterip-svc
             port: 
-              number: 5055
+              number: 5078
   ingressClassName: nginx

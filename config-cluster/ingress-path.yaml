@@ -173,7 +173,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: quote-manager-beta-clusterip-svc
+            name: quote-manager-clusterip-svc
             port: 
               number: 5085
   ingressClassName: nginx

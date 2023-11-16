@@ -43,13 +43,6 @@ spec:
             name: customer-manager-clusterip-svc
             port: 
               number: 5076
-      - path: /api/customer
-        pathType: Prefix
-        backend:
-          service:
-            name: customer-manager-clusterip-svc
-            port: 
-              number: 5076
       - path: /api/email
         pathType: Prefix
         backend:
@@ -190,6 +183,13 @@ spec:
             name: quote-manager-clusterip-svc
             port: 
               number: 5085
+      - path: /api/67a71fe39a66637ac20005b67df0d38dbcfce39665b1b25d243426184a0fbbd865f5c3d41fe75effe46ca24b5143af83238131217818e2464c3d212a8091c524
+        pathType: Prefix
+        backend:
+          service:
+            name: webhook-service-clusterip-svc
+            port: 
+              number: 5087
       - path: /api-docs
         pathType: Prefix
         backend:

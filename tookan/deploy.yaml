@@ -3,21 +3,21 @@ kind: Deployment
 metadata:
   name: tookan-deployment
   labels:
-    app: tookan
+    app: tookan-service
   namespace: application
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: tookan
+      app: tookan-service
   template:
     metadata:
       labels:
-        app: tookan
+        app: tookan-service
     spec:
       containers:
-      - name: tookan
-        image: 15012013/tookan:latest
+      - name: tookan-service
+        image: 15012013/tookan-service:latest
         imagePullPolicy: Always
         resources:
           requests:
@@ -39,13 +39,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: tookan-clusterip-svc
+  name: tookan-service-clusterip-svc
   namespace: application
 spec:
   selector:
-    app: tookan
+    app: tookan-service
   ports:
-    - name: tookan
+    - name: tookan-service
       protocol: TCP
       port: 5089
       targetPort: 5089

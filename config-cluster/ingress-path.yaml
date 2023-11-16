@@ -180,7 +180,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: task-manager-clusterip-svc
+            name: job-manager-clusterip-svc
             port: 
-              number: 5078
+              number: 5091
   ingressClassName: nginx

@@ -36,7 +36,7 @@ spec:
             name: campaign-manager-clusterip-svc
             port: 
               number: 5080
-      - path: /api/customer
+      - path: /api/customers
         pathType: Prefix
         backend:
           service:

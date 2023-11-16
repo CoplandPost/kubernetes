@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tookan-deployment
+  name: tookan-service-deployment
   labels:
     app: tookan-service
   namespace: application
@@ -45,7 +45,7 @@ spec:
   selector:
     app: tookan-service
   ports:
-    - name: tookan-service
+    - name: tookan
       protocol: TCP
       port: 5089
       targetPort: 5089

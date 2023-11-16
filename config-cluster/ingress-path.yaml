@@ -180,7 +180,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: campaign-manager-clusterip-svc
+            name: job-manager-clusterip-svc
             port: 
-              number: 5080
+              number: 5091
   ingressClassName: nginx

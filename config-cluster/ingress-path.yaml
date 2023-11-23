@@ -194,7 +194,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: people-manager-clusterip-svc
+            name: job-manager-clusterip-svc
             port: 
-              number: 5055
+              number: 5091
   ingressClassName: nginx

@@ -194,7 +194,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: tookan-clusterip-svc
+            name: tookan-service-clusterip-svc
             port: 
               number: 5089
   ingressClassName: nginx

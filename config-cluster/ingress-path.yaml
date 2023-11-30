@@ -194,7 +194,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: tookan-service-clusterip-svc
+            name: campaign-manager-clusterip-svc
             port: 
-              number: 5089
+              number: 5080
   ingressClassName: nginx
